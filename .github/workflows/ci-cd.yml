@@ -17,7 +17,8 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Build Docker image
-        run: docker build -t flask-app .
+        run: docker build -t flask-app -f ./Dockerfile .
+        # Explicit path to the Dockerfile
 
       - name: Run Docker container
         run: docker run -d -p 5000:5000 flask-app
