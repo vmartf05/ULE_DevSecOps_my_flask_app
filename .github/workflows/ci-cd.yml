@@ -18,10 +18,12 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t flask-app -f ./Dockerfile .
-        # Explicit path to the Dockerfile
 
       - name: Run Docker container
         run: docker run -d -p 5000:5000 flask-app
+
+      - name: Wait for the server to start
+        run: sleep 10
 
       - name: Test the app
         run: curl http://localhost:5000
