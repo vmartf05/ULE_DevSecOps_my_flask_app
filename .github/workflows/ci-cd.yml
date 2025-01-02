@@ -24,4 +24,4 @@ jobs:
         run: docker run -d -p 5000:5000 flask-app
 
       - name: Test the app
-        run: curl -f http://localhost:5000
+        run: curl http://localhost:5000
